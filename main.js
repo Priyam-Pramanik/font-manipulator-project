@@ -17,9 +17,15 @@ function modelLoaded(){
 function gotPoses(results){
     if(results.length > 0){
         console.log(results);
+        leftWristX = result[0].pose.leftWristX.x;
+        rightWristX = result[0].pose.rightWristX.x;
+        difference = floor(leftWristX- rightWristX); 
     }
 }
 
 function draw(){
-    background('#969A97');   
+    background('#969A97');  
+    textSize(difference);
+    fill('#FFE787');
+    text('Peter', 50, 400)  
 }
